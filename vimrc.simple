@@ -1,0 +1,169 @@
+" ┌───────────────────────────────────┐
+" │         VimFiles by hypc          │
+" ├───────────────────────────────────┤
+" │ https://github.com/hypc/vimfiles/ │
+" └───────────────────────────────────┘
+
+" ┌────────────────────────────────┐
+" │             Vundle             │
+" └────────────────────────────────┘
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'danro/rename.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'gorkunov/smartpairs.vim'
+Plugin 'lilydjwg/colorizer'
+call vundle#end()
+filetype plugin indent on
+
+" ┌────────────────────────────────┐
+" │            settings            │
+" └────────────────────────────────┘
+" Syntax on
+syntax on
+" Autoindent with two spaces, always expand tabs
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set winwidth=79
+" Folding settings
+set nofoldenable
+" make cmdline tab completion similar to bash
+set wildmode=list:longest
+" enable ctrl-n and ctrl-p to scroll thru matches
+set wildmenu
+" stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~
+" Vertical / horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+" Enable error files & error jumping
+set cf
+" Yanks go on clipboard instead
+set clipboard+=unnamed
+" Number of things to remember in history
+set history=256
+" Writes on make/shell commands
+set autowrite
+" Ruler on
+set ruler
+" Line numbers on
+set nu
+" Line wrapping on
+set wrap
+" Time to wait after ESC (default causes an annoying delay)
+set timeoutlen=250
+" Highlight all search results
+set incsearch
+set hlsearch
+" Ignore case in searches
+set ignorecase
+" Open splits at right side (and below)
+set splitright
+set splitbelow
+" Never ever let Vim write a backup file!
+set nobackup
+set noswapfile
+
+" ┌────────────────────────────────┐
+" │         vim-airline            │
+" └────────────────────────────────┘
+set laststatus=2
+let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+
+" ┌────────────────────────────────┐
+" │           nerdtree             │
+" └────────────────────────────────┘
+nmap <F2> :NERDTreeToggle<CR>
+let NERDChristmasTree = 1
+let NERDTreeAutoCenter = 1
+let NERDTreeBookmarksFile = 1
+let NERDTreeMouseMode = 2
+let NERDTreeShowFiles = 1
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeWinPos = 'left'
+let NERDTreeWinSize = 36
+let NERDTreeIgnore = [
+    \ '\.DS_Store$',
+    \ '\.bundle$',
+    \ '\.capistrano$',
+    \ '\.git$',
+    \ '\.gitkeep$',
+    \ '\.keep$',
+    \ '\.svn',
+    \ '\.localized$',
+    \ '\.routes$',
+    \ '\.sass-cache$',
+    \ '\.swo$',
+    \ '\.swp$',
+    \ 'tags$'
+    \ ]
+let g:NERDTreeShowIgnoredStatus = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ┌────────────────────────────────┐
+" │           ctrlp.vim            │
+" └────────────────────────────────┘
+let g:ctrlp_use_caching = 1
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
+
+" ┌────────────────────────────────┐
+" │            ack.vim             │
+" └────────────────────────────────┘
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
+" ┌────────────────────────────────┐
+" │           syntastic            │
+" └────────────────────────────────┘
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '🤔'
+let g:syntastic_warning_symbol = '😱'
+let g:syntastic_style_warning_symbol = '💩'
+
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
+let g:syntastic_haml_checkers = ['haml_lint']
+
+highlight link SyntasticErrorSign        SignColumn
+highlight link SyntasticWarningSign      SignColumn
+highlight link SyntasticStyleErrorSign   SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
+
