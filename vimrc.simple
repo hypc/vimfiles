@@ -21,6 +21,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'kien/ctrlp.vim'
@@ -28,6 +29,11 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gorkunov/smartpairs.vim'
 Plugin 'lilydjwg/colorizer'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'alvan/vim-closetag'
+Plugin 'tpope/vim-surround'
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 filetype plugin indent on
 
@@ -99,6 +105,11 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+
+" ┌────────────────────────────────┐
+" │          indentLine            │
+" └────────────────────────────────┘
+let g:indentLine_char = '┆'
 
 " ┌────────────────────────────────┐
 " │           nerdtree             │
@@ -179,4 +190,9 @@ highlight link SyntasticErrorSign        SignColumn
 highlight link SyntasticWarningSign      SignColumn
 highlight link SyntasticStyleErrorSign   SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
+
+" ┌────────────────────────────────┐
+" │          delimitMate           │
+" └────────────────────────────────┘
+let delimitMate_matchpairs = "(:),[:],{:}"
 
