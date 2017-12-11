@@ -17,6 +17,8 @@ Plugin 'vim-scripts/L9'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'danro/rename.vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
@@ -38,8 +40,12 @@ syntax on
 set autoindent
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
+set smarttab
+set shiftround
 set winwidth=79
+set backspace=indent,eol,start
 " Folding settings
 set nofoldenable
 " make cmdline tab completion similar to bash
@@ -79,6 +85,12 @@ set splitbelow
 " Never ever let Vim write a backup file!
 set nobackup
 set noswapfile
+" Cursorline on
+set cursorline
+
+set title
+set encoding=utf-8
+set termencoding=utf-8
 
 " ┌────────────────────────────────┐
 " │         vim-airline            │
@@ -100,7 +112,7 @@ let NERDTreeShowFiles = 1
 let NERDTreeShowHidden = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeWinPos = 'left'
-let NERDTreeWinSize = 36
+let NERDTreeWinSize = 42
 let NERDTreeIgnore = [
     \ '\.DS_Store$',
     \ '\.bundle$',
