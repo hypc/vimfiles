@@ -98,6 +98,13 @@ set title
 set encoding=utf-8
 set termencoding=utf-8
 
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-a> <Home>
+map <C-e> <End>
+
 " ┌────────────────────────────────┐
 " │         vim-airline            │
 " └────────────────────────────────┘
