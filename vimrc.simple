@@ -98,6 +98,8 @@ set cursorline
 set title
 set encoding=utf-8
 set termencoding=utf-8
+set background=dark
+set guifont=RobotoMono-Light:h14
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -145,6 +147,7 @@ let NERDTreeIgnore = [
     \ '\.sass-cache$',
     \ '\.swo$',
     \ '\.swp$',
+    \ '^\~',
     \ 'tags$'
     \ ]
 let g:NERDTreeShowIgnoredStatus = 1
