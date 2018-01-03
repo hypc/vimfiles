@@ -205,5 +205,5 @@ highlight link SyntasticStyleWarningSign SignColumn
 " ┌────────────────────────────────┐
 " │          delimitMate           │
 " └────────────────────────────────┘
-let delimitMate_matchpairs = "(:),[:],{:}"
+let delimitMate_matchpairs = "(:),[:],{:},『:』,「:」,【:】,《:》"
 
