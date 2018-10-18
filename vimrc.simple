@@ -29,6 +29,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'gorkunov/smartpairs.vim'
 Plugin 'lilydjwg/colorizer'
+Plugin 'xuhdev/vim-IniParser'
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'alvan/vim-closetag'

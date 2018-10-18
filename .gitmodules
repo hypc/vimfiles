@@ -61,3 +61,6 @@
 [submodule "bundle/vim-closetag"]
 	path = bundle/vim-closetag
 	url = https://github.com/alvan/vim-closetag.git
+[submodule "bundle/vim-IniParser"]
+	path = bundle/vim-IniParser
+	url = https://github.com/xuhdev/vim-IniParser.git
