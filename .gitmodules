@@ -64,3 +64,9 @@
 [submodule "bundle/vim-IniParser"]
 	path = bundle/vim-IniParser
 	url = https://github.com/xuhdev/vim-IniParser.git
+[submodule "bundle/MatchTag"]
+	path = bundle/MatchTag
+	url = https://github.com/gregsexton/MatchTag.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
