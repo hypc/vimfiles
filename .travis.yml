@@ -1,0 +1,17 @@
+language: python
+python:
+  - 3.5
+script:
+  - git submodule update --recursive --init
+  - git submodule foreach git checkout master
+  - git submodule foreach git pull
+after_script:
+  - git config user.name hypc
+  - git config user.email h_yp00@163.com
+  - git add .
+  - git commit -m 'update'
+  - export TAG_NAME=$(date +'%Y%m%d%H%M%S')
+  - git tag $TAG_NAME
+  - git push --quiet https://$GITHUB_TOKEN@github.com/hypc/vimfiles
+  - git push --quiet https://$GITHUB_TOKEN@github.com/hypc/vimfiles $TAG_NAME
+

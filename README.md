@@ -1,5 +1,7 @@
 # VimFiles
 
+[![Build Status](https://travis-ci.org/hypc/vimfiles.svg?branch=master)](https://travis-ci.org/hypc/vimfiles)
+
 ## Installation
 
 ### Install Script
