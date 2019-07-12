@@ -65,6 +65,7 @@ set wildmenu
 " stuff to ignore when tab completing
 set wildignore=*.o,*.obj,*~
 " Vertical / horizontal scroll off settings
+set mouse=a
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
