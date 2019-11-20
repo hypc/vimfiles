@@ -12,6 +12,5 @@ after_script:
   - git commit -m 'update'
   - export TAG_NAME=$(date +'%Y%m%d%H%M%S')
   - git tag $TAG_NAME
-  - git push --quiet https://$GITHUB_TOKEN@github.com/hypc/vimfiles
-  - git push --quiet https://$GITHUB_TOKEN@github.com/hypc/vimfiles $TAG_NAME
+  - git push --quiet https://$GITHUB_TOKEN@github.com/hypc/vimfiles master:master
 

@@ -98,7 +98,7 @@ set nobackup
 set noswapfile
 " Highlight the line and the column of the current position of cursor
 set cursorline
-" set cursorcolumn
+"set cursorcolumn
 
 set title
 set encoding=utf-8
